@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>December Rain 🌧️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom, #bfc9d9, #e6e9f0);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #2f3e46;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      max-width: 420px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 30px;
+      background: #6b8ba4;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #56758f;
+    }
+
+    /* 🌧️ RAIN */
+    .rain {
+      position: absolute;
+      top: -100px;
+      width: 2px;
+      height: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Hai Mba Fatmaww 🤍</h1>
+    <p>
+      Selamat datang pada bab baru yaa.<br><br>
+
+      Apapun itu, aku berdoa semoga Mba Fatma<br>
+      selalu dikelilingi hal-hal manis<br>
+      di setiap huruf yang Mba Fatma tulis.<br><br>
+
+      Lesgoww Mba Fatmaaa,<br>
+      kita besok keliling dunia yaa.<br>
+      Aku jajanin gelato stracciatella di Italia deh xixixi 🍨🇮🇹
+    </p>
+
+    <!-- 🎵 MUSIK (ISI SENDIRI NANTI) -->
+    <audio id="bgm" loop>
+      <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="document.getElementById('bgm').play()">
+      ▶ Play Music
+    </button>
+  </div>
+
+  <!-- 🌧️ SCRIPT HUJAN -->
+  <script>
+    const jumlahHujan = 70;
+
+    for (let i = 0; i < jumlahHujan; i++) {
+      const rain = document.createElement("div");
+      rain.classList.add("rain");
+      rain.style.left = Math.random() * window.innerWidth + "px";
+      rain.style.animationDuration = (2 + Math.random() * 3) + "s";
+      rain.style.opacity = Math.random();
+      document.body.appendChild(rain);
+    }
+  </script>
+
+</body>
+</html>
